@@ -11,7 +11,7 @@ import {
   styled,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { drawerWidth } from "./components/Sidebar";
+import { drawerWidth } from "./Sidebar";
 
 const MainContent = () => {
   const theme = useTheme();
