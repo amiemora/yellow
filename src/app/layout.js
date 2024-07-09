@@ -8,7 +8,7 @@ import { getTheme } from "./theme";
 import { BreakpointProvider } from "./context/BreakpointContext";
 import Sidebar from "./components/Sidebar";
 import TopBar from "./components/TopBar";
-import MainContent from "./components/MainContent";
+
 import BottomNavigation from "./components/BottomNav";
 import { useBreakpoint } from "./context/BreakpointContext";
 
@@ -28,10 +28,19 @@ export default function RootLayout({ children }) {
               <Box sx={{ flexGrow: 1, overflow: "auto" }}>
                 {/* TopBar stays on top */}
                 <TopBar />
-                {/* <MainContent /> */}
-                {children}
+
+                <Box
+                  sx={{
+                    pt: { xs: 8, md: 10 }, // Add padding to account for TopBar height
+                    flexGrow: 1,
+                    overflow: "auto",
+                  }}
+                >
+                  {children}
+                </Box>
+
                 {/* BottomNavigation stays at the bottom */}
-                <BottomNavigation />
+                {/* <BottomNavigation /> */}
               </Box>
             </Box>
           </BreakpointProvider>
