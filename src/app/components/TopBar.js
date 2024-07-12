@@ -57,7 +57,12 @@ const TopBar = () => {
           <Box display="flex" alignItems="center">
             {menuItems.map(({ label, route }) => (
               <Link key={label} href={route} passHref>
-                <Chip label={label} clickable={true} sx={{ mr: 1 }} />
+                <Chip
+                  color="primary"
+                  label={label}
+                  clickable={true}
+                  sx={{ mr: 1 }}
+                />
               </Link>
             ))}
             {/* ... (other elements) */}
