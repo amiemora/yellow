@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { Home, Search, LibraryMusic } from "@mui/icons-material";
 
-export const drawerWidth = 356; // Standard sidebar width (adjust if needed)
+export const drawerWidth = 256; // Standard sidebar width (adjust if needed)
 
 const StyledDrawer = styled(MuiDrawer)(({ theme }) => ({
   width: drawerWidth,

@@ -19,13 +19,17 @@ import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import Link from "next/link";
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useBreakpoint } from "./context/BreakpointContext";
 
 const HeroSection = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  height: "100vh",
+  height: "80vh",
   background: "linear-gradient(to bottom right, #121212, #1E1E1E)",
   color: theme.palette.text.primary,
   textAlign: "center",
@@ -49,60 +53,117 @@ const ContactSection = styled(Box)(({ theme }) => ({
   color: theme.palette.text.primary,
 }));
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  lazyLoad: "ondemand",
+};
+
+const images = [
+  "gcp.png",
+  "analytics.png",
+  "rquery.png",
+  "react.png",
+  "api.png",
+  "webhook.png",
+  "vercel.png",
+  "namecheap.png",
+  "next.png",
+  "node.png",
+  "express.png",
+  "nuxt.png",
+  "firebase.png",
+  "mongo.png",
+  "post.png",
+  "micro.png",
+  "MUI.png",
+  "boot.png",
+  "tailwind.png",
+  "wordpress.png",
+  "stripe.png",
+  "openai.png",
+  "claude.png",
+  "gemini.png",
+  "sendgrid.png",
+  "rebrandly.png",
+  "intuit.png",
+  "maps.png",
+  "spotify.png",
+  // Add more images here
+];
+
+const imageStyle = {
+  width: "500px",
+  height: "300px",
+  objectFit: "cover",
+  borderRadius: "8px",
+  margin: "0 auto",
+};
+
 export default function Home() {
   const theme = useTheme();
+  const { isMobile } = useBreakpoint();
 
   return (
     <Box>
       {/* Hero Section */}
       <HeroSection>
         <Avatar
-          src="/path/to/profile.jpg"
+          src="amie.png"
           alt="Your Name"
-          sx={{ width: 120, height: 120, mb: 2 }}
+          sx={{ width: 200, height: 200, mb: 2 }}
         />
         <Typography variant="h1">Hi, I&#39;m Amie Morales</Typography>
 
         <Typography variant="h4">
-          Full-Stack Developer | Passionate about creating engaging web
-          applications
+          Innovative Full-Stack Developer Specializing in API Integrations
         </Typography>
 
-        <Button variant="contained" color="primary" sx={{ mt: 4 }}>
-          View My Work
-        </Button>
+        {/* <Chip color="primary" label="View My Work" /> */}
       </HeroSection>
 
       {/* About Section */}
       <AboutSection>
         <Container>
-          <Typography variant="h2" gutterBottom>
+          {/* <Typography variant="h2" gutterBottom>
             About Me
-          </Typography>
+          </Typography> */}
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-              <Typography variant="body1">
-                I&#39;m a full-stack developer with a strong focus on creating
-                user-friendly and dynamic web applications. I specialize in
-                using React, Next.js, and MUI to build responsive and visually
-                appealing interfaces. My passion for coding extends beyond just
-                writing code; I enjoy solving complex problems and continuously
-                learning about new technologies.
+              <Typography variant="h5">
+                Experienced and highly motivated Full-Stack Software Engineer
+                with a passion for leveraging AI to build innovative web
+                applications. Proficient in ReactJS, JavaScript, Node.js, and
+                integrating AI models like Gemini, Claude, and ChatGPT. Skilled
+                in API development, automation, and infrastructure planning on
+                platforms like GCP and Vercel. Proven ability to learn quickly,
+                work independently, and deliver high-quality solutions.
               </Typography>
-              <Box mt={2}>
+              {/* <Box mt={2}>
                 {["React", "Next.js", "JavaScript", "CSS", "HTML"].map(
                   (skill) => (
                     <Chip key={skill} label={skill} sx={{ m: 0.5 }} />
                   )
                 )}
-              </Box>
+              </Box> */}
             </Grid>
             <Grid item xs={12} md={6}>
-              <img
-                src="/path/to/image.jpg"
-                alt="About Image"
-                style={{ width: "100%", borderRadius: "8px" }}
-              />
+              <Slider {...settings}>
+                {images.map((src, index) => (
+                  <div key={index}>
+                    <img
+                      src={src}
+                      alt={`Image ${index + 1}`}
+                      style={imageStyle}
+                    />
+                  </div>
+                ))}
+              </Slider>
             </Grid>
           </Grid>
         </Container>
@@ -112,20 +173,20 @@ export default function Home() {
       <ProjectsSection>
         <Container>
           <Typography variant="h2" gutterBottom>
-            Projects
+            Featured
           </Typography>
           <Grid container spacing={4}>
             {[
               {
-                title: "Portfolio Website",
+                title: "Startup Accelerator Experience",
                 description:
                   "A personal portfolio website built using Next.js and MUI to showcase my projects and skills.",
                 technologies: ["Next.js", "React", "MUI"],
-                image: "/path/to/project1.jpg",
+                image: "techstars.png",
                 link: "https://github.com/yourusername/portfolio-website",
               },
               {
-                title: "E-commerce Platform",
+                title: "Custom API and Webhook Experience",
                 description:
                   "A fully functional e-commerce platform with user authentication, product listings, and a shopping cart.",
                 technologies: ["React", "Node.js", "MongoDB"],
@@ -133,7 +194,7 @@ export default function Home() {
                 link: "https://github.com/yourusername/ecommerce-platform",
               },
               {
-                title: "Weather App",
+                title: "Cofounded a Prompt Management App",
                 description:
                   "A weather forecasting app that provides real-time weather data and forecasts for any location.",
                 technologies: ["React", "API Integration", "CSS"],
