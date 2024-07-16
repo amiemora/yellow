@@ -46,7 +46,7 @@ const TopBar = () => {
     <StyledTopBar
       sx={{
         width: isMobile ? "100%" : `calc(100% - 356px)`,
-        left: isMobile ? 0 : "356px",
+        left: isMobile ? 0 : "256px",
       }}
     >
       <Grid container justifyContent="space-between" alignItems="center">
