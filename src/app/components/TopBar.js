@@ -22,8 +22,8 @@ import Link from "next/link";
 const menuItems = [
   { label: "Home", route: "/" },
   { label: "About", route: "/about" },
-  { label: "Projects", route: "/projects" },
-  { label: "Skills", route: "/skills" },
+  // { label: "Projects", route: "/projects" },
+  // { label: "Skills", route: "/skills" },
   { label: "Contact", route: "/contact" },
 ];
 
@@ -35,6 +35,7 @@ const StyledTopBar = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   position: "fixed", // Fix the TopBar
   top: 0, // Position it at the top
+  width: "100%",
   zIndex: 10, // Ensure it stays on top
 }));
 
@@ -44,15 +45,13 @@ const TopBar = () => {
 
   return (
     <StyledTopBar
-      sx={{
-        width: isMobile ? "100%" : `calc(100% - 356px)`,
-        left: isMobile ? 0 : "256px",
-      }}
+    // sx={{
+    //   width: isMobile ? "100%" : `calc(100% - 356px)`,
+    //   left: isMobile ? 0 : "256px",
+    // }}
     >
       <Grid container justifyContent="space-between" alignItems="center">
-        <Grid item>
-          <Star />
-        </Grid>
+        <Grid item>{/* <Star /> */}</Grid>
         <Grid item>
           <Box display="flex" alignItems="center">
             {menuItems.map(({ label, route }) => (

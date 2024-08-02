@@ -22,11 +22,7 @@ export default function About() {
   const theme = useTheme();
   return (
     <Box sx={{ p: 3, maxWidth: 1200, margin: "0 auto" }}>
-      <Typography
-        variant="h1"
-        gutterBottom
-        sx={{ color: theme.palette.primary.main }}
-      >
+      <Typography variant="h1" gutterBottom>
         About Me
       </Typography>
 

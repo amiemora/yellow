@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Container,
@@ -29,21 +29,21 @@ const HeroSection = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  height: "80vh",
-  background: "linear-gradient(to bottom right, #121212, #1E1E1E)",
+  height: "40vh",
+  backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
   textAlign: "center",
 }));
 
 const AboutSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 2),
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.palette.background.paper,
   color: theme.palette.text.primary,
 }));
 
 const ProjectsSection = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 2),
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: theme.palette.background.default,
   color: theme.palette.text.primary,
 }));
 
@@ -98,16 +98,16 @@ const images = [
 ];
 
 const imageStyle = {
-  width: "500px",
-  height: "300px",
+  width: "100%",
+  height: "300px", // fixed height to ensure consistency
   objectFit: "cover",
   borderRadius: "8px",
   margin: "0 auto",
 };
 
-export default function Home() {
+const Home = () => {
   const theme = useTheme();
-  const { isMobile } = useBreakpoint();
+  const { isMobile, isTablet, isDesktop } = useBreakpoint();
 
   return (
     <Box>
@@ -127,13 +127,83 @@ export default function Home() {
         {/* <Chip color="primary" label="View My Work" /> */}
       </HeroSection>
 
+      {/* Projects Section */}
+      <ProjectsSection>
+        <Container>
+          <Typography variant="h2" gutterBottom>
+            Featured
+          </Typography>
+          <Grid container spacing={4} direction={isTablet ? "column" : "row"}>
+            {[
+              {
+                title: "Startup Accelerator Experience",
+                description:
+                  "A personal portfolio website built using Next.js and MUI to showcase my projects and skills.",
+                technologies: ["Next.js", "React", "MUI"],
+                image: "techstars.png",
+                label: "techstars",
+                route: "/techstars",
+              },
+              {
+                title: "Custom API and Webhook Experience",
+                description:
+                  "A fully functional e-commerce platform with user authentication, product listings, and a shopping cart.",
+                technologies: ["React", "Node.js", "MongoDB"],
+                image: "apireq.png",
+                label: "api",
+                route: "/api",
+              },
+              {
+                title: "Cofounded a Prompt Management App",
+                description:
+                  "A weather forecasting app that provides real-time weather data and forecasts for any location.",
+                technologies: ["React", "API Integration", "CSS"],
+                image: "eazl.png",
+                label: "eazl",
+                route: "/eazl",
+              },
+            ].map((project) => (
+              <Grid item xs={12} md={isTablet ? 12 : 4} key={project.title}>
+                <Link key={project.label} href={project.route} passHref>
+                  <Card>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image={project.image}
+                      alt={project.title}
+                    />
+                    <CardContent>
+                      <Typography variant="h5">{project.title}</Typography>
+                      {/* <Typography variant="body2" color="textSecondary">
+                      {project.description}
+                    </Typography>
+                    <Box mt={2}>
+                      {project.technologies.map((tech) => (
+                        <Chip key={tech} label={tech} sx={{ m: 0.5 }} />
+                      ))}
+                    </Box> */}
+                      {/* <Button
+                      variant="contained"
+                      color="primary"
+                      sx={{ mt: 2 }}
+                      href={project.link}
+                      target="_blank"
+                    >
+                      View Project
+                    </Button> */}
+                    </CardContent>
+                  </Card>
+                </Link>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </ProjectsSection>
+
       {/* About Section */}
       <AboutSection>
         <Container>
-          {/* <Typography variant="h2" gutterBottom>
-            About Me
-          </Typography> */}
-          <Grid container spacing={4}>
+          <Grid container spacing={4} direction={"row"}>
             <Grid item xs={12} md={6}>
               <Typography variant="h5">
                 Experienced and highly motivated Full-Stack Software Engineer
@@ -144,13 +214,6 @@ export default function Home() {
                 platforms like GCP and Vercel. Proven ability to learn quickly,
                 work independently, and deliver high-quality solutions.
               </Typography>
-              {/* <Box mt={2}>
-                {["React", "Next.js", "JavaScript", "CSS", "HTML"].map(
-                  (skill) => (
-                    <Chip key={skill} label={skill} sx={{ m: 0.5 }} />
-                  )
-                )}
-              </Box> */}
             </Grid>
             <Grid item xs={12} md={6}>
               <Slider {...settings}>
@@ -168,74 +231,6 @@ export default function Home() {
           </Grid>
         </Container>
       </AboutSection>
-
-      {/* Projects Section */}
-      <ProjectsSection>
-        <Container>
-          <Typography variant="h2" gutterBottom>
-            Featured
-          </Typography>
-          <Grid container spacing={4}>
-            {[
-              {
-                title: "Startup Accelerator Experience",
-                description:
-                  "A personal portfolio website built using Next.js and MUI to showcase my projects and skills.",
-                technologies: ["Next.js", "React", "MUI"],
-                image: "techstars.png",
-                link: "https://github.com/yourusername/portfolio-website",
-              },
-              {
-                title: "Custom API and Webhook Experience",
-                description:
-                  "A fully functional e-commerce platform with user authentication, product listings, and a shopping cart.",
-                technologies: ["React", "Node.js", "MongoDB"],
-                image: "/path/to/project2.jpg",
-                link: "https://github.com/yourusername/ecommerce-platform",
-              },
-              {
-                title: "Cofounded a Prompt Management App",
-                description:
-                  "A weather forecasting app that provides real-time weather data and forecasts for any location.",
-                technologies: ["React", "API Integration", "CSS"],
-                image: "/path/to/project3.jpg",
-                link: "https://github.com/yourusername/weather-app",
-              },
-            ].map((project) => (
-              <Grid item xs={12} md={4} key={project.title}>
-                <Card>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={project.image}
-                    alt={project.title}
-                  />
-                  <CardContent>
-                    <Typography variant="h5">{project.title}</Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      {project.description}
-                    </Typography>
-                    <Box mt={2}>
-                      {project.technologies.map((tech) => (
-                        <Chip key={tech} label={tech} sx={{ m: 0.5 }} />
-                      ))}
-                    </Box>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      sx={{ mt: 2 }}
-                      href={project.link}
-                      target="_blank"
-                    >
-                      View Project
-                    </Button>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </ProjectsSection>
 
       {/* Contact Section */}
       <ContactSection>
@@ -294,4 +289,6 @@ export default function Home() {
       </ContactSection>
     </Box>
   );
-}
+};
+
+export default Home;
