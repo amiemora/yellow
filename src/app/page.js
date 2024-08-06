@@ -129,9 +129,11 @@ const Home = () => {
       {/* Projects Section */}
       <ProjectsSection>
         <Container>
-          <Typography variant="h2" gutterBottom>
-            Featured
-          </Typography>
+          <Box pb={2}>
+            <Typography variant="h2" gutterBottom>
+              Featured
+            </Typography>
+          </Box>
           <Grid container spacing={4} direction={isTablet ? "column" : "row"}>
             {[
               {
@@ -185,6 +187,10 @@ const Home = () => {
       {/* About Section */}
       <AboutSection>
         <Container>
+          <Box pb={3}>
+            <Typography variant="h2">Skills</Typography>
+          </Box>
+
           <Slider {...settings}>
             {images.map((src, index) => (
               <div key={index}>
