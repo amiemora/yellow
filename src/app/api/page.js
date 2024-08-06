@@ -135,16 +135,18 @@ const Api = () => {
                     height: "100%",
                     minHeight: "400px",
                     border: "none",
+                    overflow: "hidden",
                   },
                 }}
               >
                 <iframe
-                  src="https://www.linkedin.com/pulse/leveraging-simulationsnet-data-enhanced-hubspot-automation/?trackingId=ohwATqRSSGicbfb97oBWSA%3D%3D"
-                  height="400"
-                  width="100%"
-                  allowFullScreen=""
-                  title="Embedded LinkedIn article"
-                />
+                  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7100563083470807041"
+                  height="585"
+                  width="504"
+                  frameborder="0"
+                  allowfullscreen=""
+                  title="Embedded post"
+                ></iframe>
               </Box>
             </Grid>
           </Grid>
@@ -199,10 +201,10 @@ const Api = () => {
             </Grid>
             <Grid item xs={12} md={6} order={isMobile ? 1 : 2}>
               <Image
-                // src="/eazl-api-screenshot.jpg"
+                src="/pdfss.png"
                 alt="Eazl.ai API"
-                width={isMobile ? 300 : 600}
-                height={400}
+                height="585"
+                width="504"
                 objectFit="cover"
               />
             </Grid>
