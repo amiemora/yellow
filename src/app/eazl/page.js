@@ -266,7 +266,7 @@ const Eazl = () => {
               component={Link}
               href="/contact"
             >
-              Let's Connect
+              Let&#39;s Connect
             </Button>
             <Box mt={2} display="flex" justifyContent="center">
               <IconButton

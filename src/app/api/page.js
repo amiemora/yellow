@@ -118,9 +118,9 @@ const Api = () => {
                 release and promotion by the CEO.
               </Typography>
               <Typography variant="body1" sx={{ fontStyle: "italic" }}>
-                "Leveraging Simulations.net Data for Enhanced HubSpot
+                Leveraging Simulations.net Data for Enhanced HubSpot
                 Automation... When this data is integrated into HubSpot, the
-                potential for marketing automation reaches new heights." - CEO
+                potential for marketing automation reaches new heights. - CEO
                 announcement, August 24, 2023
               </Typography>
             </Grid>
@@ -257,8 +257,8 @@ const Api = () => {
           </List>
 
           <Typography variant="body1" paragraph mt={2}>
-            In a field where technology evolves rapidly, it's not just years of
-            experience that count, but the ability to innovate, adapt, and
+            In a field where technology evolves rapidly, it&#39;s not just years
+            of experience that count, but the ability to innovate, adapt, and
             deliver impactful solutions. My track record shows I can do just
             that, bringing fresh perspectives and cutting-edge skills to any
             team.
