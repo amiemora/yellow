@@ -232,6 +232,33 @@ const Eazl = () => {
             tackle complex technical challenges.
           </Typography>
 
+          <Section>
+            <Container maxWidth="lg">
+              <Typography variant="h4" gutterBottom>
+                Featured LinkedIn Post
+              </Typography>
+              <Box
+                display="flex"
+                justifyContent="center"
+                my={4}
+                sx={{
+                  "& iframe": {
+                    maxWidth: "100%",
+                    border: "none",
+                  },
+                }}
+              >
+                <iframe
+                  src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7123416580201295873"
+                  height="739"
+                  width="504"
+                  title="Embedded LinkedIn post"
+                  allowFullScreen
+                />
+              </Box>
+            </Container>
+          </Section>
+
           <Box textAlign="center" mt={4}>
             <Button
               variant="contained"
@@ -243,21 +270,21 @@ const Eazl = () => {
             </Button>
             <Box mt={2} display="flex" justifyContent="center">
               <IconButton
-                href="https://github.com/yourusername"
+                href="https://github.com/amiemora"
                 target="_blank"
                 color="inherit"
               >
                 <GitHub />
               </IconButton>
               <IconButton
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/amie-morales-101b38223/"
                 target="_blank"
                 color="inherit"
               >
                 <LinkedIn />
               </IconButton>
               <IconButton
-                href="https://twitter.com/yourusername"
+                href="https://www.instagram.com/fullstackamie/"
                 target="_blank"
                 color="inherit"
               >

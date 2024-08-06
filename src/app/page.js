@@ -56,12 +56,13 @@ const ContactSection = styled(Box)(({ theme }) => ({
 const settings = {
   dots: true,
   infinite: true,
-  speed: 500,
-  slidesToShow: 1,
+  speed: 3000,
+  slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,
-  lazyLoad: "ondemand",
+  // lazyLoad: "ondemand",
+  CssEase: "linear",
 };
 
 const images = [
@@ -69,8 +70,6 @@ const images = [
   "analytics.png",
   "rquery.png",
   "react.png",
-  "api.png",
-  "webhook.png",
   "vercel.png",
   "namecheap.png",
   "next.png",
@@ -98,9 +97,9 @@ const images = [
 ];
 
 const imageStyle = {
-  width: "100%",
-  height: "300px", // fixed height to ensure consistency
-  objectFit: "cover",
+  width: "90%",
+  height: "150px", // Reduced height for smaller images
+  objectFit: "contain", // Changed to 'contain' to ensure full image is visible
   borderRadius: "8px",
   margin: "0 auto",
 };
@@ -174,23 +173,6 @@ const Home = () => {
                     />
                     <CardContent>
                       <Typography variant="h5">{project.title}</Typography>
-                      {/* <Typography variant="body2" color="textSecondary">
-                      {project.description}
-                    </Typography>
-                    <Box mt={2}>
-                      {project.technologies.map((tech) => (
-                        <Chip key={tech} label={tech} sx={{ m: 0.5 }} />
-                      ))}
-                    </Box> */}
-                      {/* <Button
-                      variant="contained"
-                      color="primary"
-                      sx={{ mt: 2 }}
-                      href={project.link}
-                      target="_blank"
-                    >
-                      View Project
-                    </Button> */}
                     </CardContent>
                   </Card>
                 </Link>
@@ -203,32 +185,13 @@ const Home = () => {
       {/* About Section */}
       <AboutSection>
         <Container>
-          <Grid container spacing={4} direction={"row"}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h5">
-                Experienced and highly motivated Full-Stack Software Engineer
-                with a passion for leveraging AI to build innovative web
-                applications. Proficient in ReactJS, JavaScript, Node.js, and
-                integrating AI models like Gemini, Claude, and ChatGPT. Skilled
-                in API development, automation, and infrastructure planning on
-                platforms like GCP and Vercel. Proven ability to learn quickly,
-                work independently, and deliver high-quality solutions.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Slider {...settings}>
-                {images.map((src, index) => (
-                  <div key={index}>
-                    <img
-                      src={src}
-                      alt={`Image ${index + 1}`}
-                      style={imageStyle}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </Grid>
-          </Grid>
+          <Slider {...settings}>
+            {images.map((src, index) => (
+              <div key={index}>
+                <img src={src} alt={`Image ${index + 1}`} style={imageStyle} />
+              </div>
+            ))}
+          </Slider>
         </Container>
       </AboutSection>
 
@@ -262,21 +225,21 @@ const Home = () => {
                 height="100%"
               >
                 <IconButton
-                  href="https://github.com/yourusername"
+                  href="https://github.com/amiemora"
                   target="_blank"
                   color="inherit"
                 >
                   <GitHub />
                 </IconButton>
                 <IconButton
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/amie-morales-101b38223/"
                   target="_blank"
                   color="inherit"
                 >
                   <LinkedIn />
                 </IconButton>
                 <IconButton
-                  href="https://twitter.com/yourusername"
+                  href="https://www.instagram.com/fullstackamie/"
                   target="_blank"
                   color="inherit"
                 >

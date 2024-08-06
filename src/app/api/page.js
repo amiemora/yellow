@@ -125,13 +125,27 @@ const Api = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Image
-                src="/simulations-net-screenshot.jpg"
-                alt="Simulations.net Webhook"
-                width={isMobile ? 300 : 600}
-                height={400}
-                objectFit="cover"
-              />
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  minHeight: "400px",
+                  "& iframe": {
+                    width: "100%",
+                    height: "100%",
+                    minHeight: "400px",
+                    border: "none",
+                  },
+                }}
+              >
+                <iframe
+                  src="https://www.linkedin.com/pulse/leveraging-simulationsnet-data-enhanced-hubspot-automation/?trackingId=ohwATqRSSGicbfb97oBWSA%3D%3D"
+                  height="400"
+                  width="100%"
+                  allowFullScreen=""
+                  title="Embedded LinkedIn article"
+                />
+              </Box>
             </Grid>
           </Grid>
 
@@ -185,7 +199,7 @@ const Api = () => {
             </Grid>
             <Grid item xs={12} md={6} order={isMobile ? 1 : 2}>
               <Image
-                src="/eazl-api-screenshot.jpg"
+                // src="/eazl-api-screenshot.jpg"
                 alt="Eazl.ai API"
                 width={isMobile ? 300 : 600}
                 height={400}
@@ -262,21 +276,21 @@ const Api = () => {
             </Button>
             <Box mt={2} display="flex" justifyContent="center">
               <IconButton
-                href="https://github.com/yourusername"
+                href="https://github.com/amiemora"
                 target="_blank"
                 color="inherit"
               >
                 <GitHub />
               </IconButton>
               <IconButton
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/amie-morales-101b38223/"
                 target="_blank"
                 color="inherit"
               >
                 <LinkedIn />
               </IconButton>
               <IconButton
-                href="https://twitter.com/yourusername"
+                href="https://www.instagram.com/fullstackamie/"
                 target="_blank"
                 color="inherit"
               >
