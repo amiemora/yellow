@@ -18,11 +18,15 @@ import {
 import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import Link from "next/link";
-import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useBreakpoint } from "./context/BreakpointContext";
+
+const Section = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(8, 2),
+}));
 
 const HeroSection = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -146,15 +150,6 @@ const Home = () => {
                 route: "/techstars",
               },
               {
-                title: "Custom API and Webhook Experience",
-                description:
-                  "A fully functional e-commerce platform with user authentication, product listings, and a shopping cart.",
-                technologies: ["React", "Node.js", "MongoDB"],
-                image: "apireq.png",
-                label: "api",
-                route: "/api",
-              },
-              {
                 title: "Cofounded a Prompt Management App",
                 description:
                   "A weather forecasting app that provides real-time weather data and forecasts for any location.",
@@ -162,6 +157,15 @@ const Home = () => {
                 image: "eazl.png",
                 label: "eazl",
                 route: "/eazl",
+              },
+              {
+                title: "Custom API and Webhook Experience",
+                description:
+                  "A fully functional e-commerce platform with user authentication, product listings, and a shopping cart.",
+                technologies: ["React", "Node.js", "MongoDB"],
+                image: "apireq.png",
+                label: "api",
+                route: "/api",
               },
             ].map((project) => (
               <Grid item xs={12} md={isTablet ? 12 : 4} key={project.title}>
@@ -201,8 +205,43 @@ const Home = () => {
         </Container>
       </AboutSection>
 
+      {/* Call to Action */}
+      <Section textAlign="center">
+        <Button
+          variant="contained"
+          color="primary"
+          component={Link}
+          href="/contact"
+        >
+          Let&#39;s Connect
+        </Button>
+        <Box mt={2} display="flex" justifyContent="center">
+          <IconButton
+            href="https://github.com/amiemora"
+            target="_blank"
+            color="inherit"
+          >
+            <GitHub />
+          </IconButton>
+          <IconButton
+            href="https://www.linkedin.com/in/amie-morales-101b38223/"
+            target="_blank"
+            color="inherit"
+          >
+            <LinkedIn />
+          </IconButton>
+          <IconButton
+            href="https://www.instagram.com/fullstackamie/"
+            target="_blank"
+            color="inherit"
+          >
+            <Instagram />
+          </IconButton>
+        </Box>
+      </Section>
+
       {/* Contact Section */}
-      <ContactSection>
+      {/* <ContactSection>
         <Container>
           <Typography variant="h2" gutterBottom>
             Contact
@@ -255,7 +294,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </Container>
-      </ContactSection>
+      </ContactSection> */}
     </Box>
   );
 };

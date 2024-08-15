@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Box,
@@ -12,14 +12,49 @@ import {
 import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
+import axios from "axios";
+
+const ContactSection = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(8, 2),
+  backgroundColor: theme.palette.background.default,
+  color: theme.palette.text.primary,
+}));
 
 const Contact = () => {
   const theme = useTheme();
-  const ContactSection = styled(Box)(({ theme }) => ({
-    padding: theme.spacing(8, 2),
-    backgroundColor: theme.palette.background.default,
-    color: theme.palette.text.primary,
-  }));
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("/contact-api", formData);
+      if (response.status === 200) {
+        alert("Message sent successfully");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      alert("Failed to send message");
+    }
+  };
 
   return (
     <ContactSection>
@@ -29,19 +64,50 @@ const Contact = () => {
         </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
-            <TextField fullWidth label="Name" margin="normal" />
-            <TextField fullWidth label="Email" margin="normal" />
-            <TextField fullWidth label="Subject" margin="normal" />
-            <TextField
-              fullWidth
-              label="Message"
-              margin="normal"
-              multiline
-              rows={4}
-            />
-            <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-              Send Message
-            </Button>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                fullWidth
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                margin="normal"
+              />
+              <TextField
+                fullWidth
+                label="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                margin="normal"
+              />
+              <TextField
+                fullWidth
+                label="Subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                margin="normal"
+              />
+              <TextField
+                fullWidth
+                label="Message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                margin="normal"
+                multiline
+                rows={4}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                sx={{ mt: 2 }}
+              >
+                Send Message
+              </Button>
+            </form>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box

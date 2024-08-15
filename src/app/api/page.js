@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
-import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 import { useBreakpoint } from "../context/BreakpointContext";
 
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -296,7 +296,7 @@ const Api = () => {
                 target="_blank"
                 color="inherit"
               >
-                <Twitter />
+                <Instagram />
               </IconButton>
             </Box>
           </Box>
