@@ -96,6 +96,59 @@ const SkillHighlight = ({ skill }) => (
 const Eazl = () => {
   const { isMobile } = useBreakpoint();
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+
+  const achievementData = [
+    {
+      primary: "Full-Stack Development",
+      secondary:
+        "Single-handedly built and maintained the entire application, from front-end to back-end, demonstrating proficiency across the entire development stack.",
+    },
+    {
+      primary: "Rapid Learning and Adaptation",
+      secondary:
+        "Quickly mastered and implemented cutting-edge AI technologies, including integration of multiple AI models (PaLM, Gemini) within days of their release.",
+    },
+    {
+      primary: "Infrastructure and DevOps",
+      secondary:
+        "Set up and managed the entire infrastructure, including domain configuration, GitHub repository management, and deployment on Vercel, showcasing strong DevOps skills.",
+    },
+    {
+      primary: "AI Integration and Innovation",
+      secondary:
+        "Developed an AI cost estimator, implemented multi-file prompt processing, and created AI-driven content generation for the app's blog, demonstrating creative problem-solving and AI expertise.",
+    },
+    {
+      primary: "API Development",
+      secondary:
+        "Designed and implemented a custom API for external prompt usage, complete with documentation, showcasing ability to create developer-friendly tools.",
+    },
+    {
+      primary: "Performance Optimization",
+      secondary:
+        "Implemented innovative solutions like custom scroll handling and efficient state management using React Query, demonstrating attention to user experience and application performance.",
+    },
+    {
+      primary: "Automated Workflows",
+      secondary:
+        "Created various automations using Google Sheets, Google Forms, and Google App Scripts, showcasing ability to streamline business processes.",
+    },
+    {
+      primary: "SEO and Content Management",
+      secondary:
+        "Integrated a headless CMS (WordPress) with custom PHP modifications and automated blog post generation, demonstrating full-stack capabilities and SEO awareness.",
+    },
+  ];
+
+  const takeawayData = [
+    "Ability to rapidly learn and implement new technologies",
+    "Strong problem-solving skills in high-pressure environments",
+    "Expertise in AI integration and prompt engineering",
+    "Proficiency in full-stack JavaScript development",
+    "Experience with modern cloud infrastructure and DevOps practices",
+    "Skill in translating business requirements into technical solutions",
+  ];
+
   return (
     <PageContainer>
       <HeroBanner>
@@ -122,80 +175,33 @@ const Eazl = () => {
           <Typography variant="h4" gutterBottom mt={4}>
             Key Achievements:
           </Typography>
-          <List sx={{ marginLeft: "-1.5rem" }}>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Full-Stack Development"
-                secondary="Single-handedly built and maintained the entire application, from front-end to back-end, demonstrating proficiency across the entire development stack."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Rapid Learning and Adaptation"
-                secondary="Quickly mastered and implemented cutting-edge AI technologies, including integration of multiple AI models (PaLM, Gemini) within days of their release."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Infrastructure and DevOps"
-                secondary="Set up and managed the entire infrastructure, including domain configuration, GitHub repository management, and deployment on Vercel, showcasing strong DevOps skills."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="AI Integration and Innovation"
-                secondary="Developed an AI cost estimator, implemented multi-file prompt processing, and created AI-driven content generation for the app's blog, demonstrating creative problem-solving and AI expertise."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="API Development"
-                secondary="Designed and implemented a custom API for external prompt usage, complete with documentation, showcasing ability to create developer-friendly tools."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Performance Optimization"
-                secondary="Implemented innovative solutions like custom scroll handling and efficient state management using React Query, demonstrating attention to user experience and application performance."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="Automated Workflows"
-                secondary="Created various automations using Google Sheets, Google Forms, and Google App Scripts, showcasing ability to streamline business processes."
-              />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText
-                primary="SEO and Content Management"
-                secondary="Integrated a headless CMS (WordPress) with custom PHP modifications and automated blog post generation, demonstrating full-stack capabilities and SEO awareness."
-              />
-            </ListItem>
-          </List>
+          <Grid container spacing={isSmallScreen ? 2 : 4}>
+            {achievementData.map((achievement, index) => (
+              <Grid item xs={12} md={6} key={index}>
+                <Card
+                  sx={{
+                    mb: 2,
+                    transition: "box-shadow 0.3s ease",
+                    "&:hover": {
+                      boxShadow: 5,
+                    },
+                  }}
+                >
+                  <CardContent>
+                    <Typography variant="h6" gutterBottom>
+                      <CheckCircleOutlineIcon
+                        sx={{ color: "primary.main", mr: 1 }}
+                      />
+                      {achievement.primary}
+                    </Typography>
+                    <Typography variant="body2">
+                      {achievement.secondary}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
 
           <Typography variant="h4" gutterBottom mt={6}>
             Technical Skills Demonstrated:
@@ -216,6 +222,7 @@ const Eazl = () => {
             ))}
           </Grid>
 
+          {/* Impact and Growth Section */}
           <Typography variant="h4" gutterBottom mt={6}>
             Impact and Growth:
           </Typography>
@@ -224,44 +231,27 @@ const Eazl = () => {
             versatile full-stack engineer capable of building and managing
             complex applications. Key takeaways include:
           </Typography>
-          <List sx={{ marginLeft: "-1.5rem" }}>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText primary="Ability to rapidly learn and implement new technologies" />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText primary="Strong problem-solving skills in high-pressure environments" />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText primary="Expertise in AI integration and prompt engineering" />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText primary="Proficiency in full-stack JavaScript development" />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText primary="Experience with modern cloud infrastructure and DevOps practices" />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
-              </ListItemIcon>
-              <ListItemText primary="Skill in translating business requirements into technical solutions" />
-            </ListItem>
-          </List>
+          <Grid container spacing={2}>
+            {takeawayData.map((takeaway, index) => (
+              <Grid item xs={12} sm={6} key={index}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontWeight: 400,
+                    display: "flex",
+                    alignItems: "center",
+                    "& svg": {
+                      mr: 1,
+                      fontSize: "1.2rem",
+                    },
+                  }}
+                >
+                  <CheckCircleOutlineIcon sx={{ color: "primary.main" }} />
+                  {takeaway}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
 
           <Typography variant="body1" paragraph mt={2}>
             My journey with Eazl.ai demonstrates my capacity to take on
