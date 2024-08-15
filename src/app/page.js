@@ -14,6 +14,7 @@ import {
   CardContent,
   TextField,
   IconButton,
+  useMediaQuery,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
@@ -135,7 +136,7 @@ const Home = () => {
       {/* Projects Section */}
       <ProjectsSection>
         <Container>
-          <Box pb={2}>
+          <Box pb={4}>
             <Typography variant="h2" gutterBottom>
               Featured
             </Typography>

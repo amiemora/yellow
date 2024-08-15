@@ -15,10 +15,17 @@ import {
   CardContent,
   Button,
   Link,
+  useMediaQuery,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
-import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
+import {
+  CheckCircleOutline,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  Twitter,
+} from "@mui/icons-material";
 import { useBreakpoint } from "../context/BreakpointContext";
 
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -38,18 +45,49 @@ const HeroBanner = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   textAlign: "center",
   color: "white",
-  "& h1, & h3": {
+  padding: theme.spacing(4),
+  [theme.breakpoints.down("sm")]: {
+    height: "20vh", // Adjust height for smaller screens
+    padding: theme.spacing(2),
+  },
+  "& h1": {
     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+    fontSize: theme.typography.h3.fontSize, // Adjust font size for responsiveness
+    [theme.breakpoints.down("sm")]: {
+      fontSize: theme.typography.h5.fontSize,
+    },
+  },
+  "& h3": {
+    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
+    fontSize: theme.typography.h5.fontSize,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: theme.typography.h6.fontSize,
+    },
   },
 }));
 
 const Section = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 2),
+  [theme.breakpoints.down("sm")]: {
+    padding: theme.spacing(4, 1),
+  },
 }));
 
 const SkillHighlight = ({ skill }) => (
   <Grid item xs={12} sm={6} md={4} key={skill}>
-    <Typography variant="body1" sx={{ fontWeight: 500 }}>
+    <Typography
+      variant="body1"
+      sx={{
+        fontWeight: 500,
+        display: "flex",
+        alignItems: "center",
+        "& svg": {
+          mr: 1,
+          fontSize: "1.2rem",
+        },
+      }}
+    >
+      <CheckCircleOutline sx={{ color: "primary.main" }} /> {/* Add icon */}
       {skill}
     </Typography>
   </Grid>
@@ -57,6 +95,7 @@ const SkillHighlight = ({ skill }) => (
 
 const Eazl = () => {
   const { isMobile } = useBreakpoint();
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   return (
     <PageContainer>
       <HeroBanner>
