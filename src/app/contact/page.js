@@ -9,7 +9,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
 import { styled } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import axios from "axios";
@@ -135,7 +135,7 @@ const Contact = () => {
                 target="_blank"
                 color="inherit"
               >
-                <Twitter />
+                <Instagram />
               </IconButton>
             </Box>
           </Grid>
