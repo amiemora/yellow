@@ -3,6 +3,7 @@
 // rendered on the client-side, allowing it to use React hooks and handle client-side interactions.
 
 import * as React from "react";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Box, CssBaseline, ThemeProvider, useTheme } from "@mui/material";
@@ -56,6 +57,10 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/tinya.png" />
+      </Head>
+
       <body>
         <ThemeProvider theme={getTheme()}>
           <BreakpointProvider>
