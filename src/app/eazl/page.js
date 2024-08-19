@@ -52,7 +52,7 @@ const HeroBanner = styled(Box)(({ theme }) => ({
   },
   "& h1": {
     textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-    fontSize: theme.typography.h3.fontSize, // Adjust font size for responsiveness
+    // fontSize: theme.typography.h3.fontSize, // Adjust font size for responsiveness
     [theme.breakpoints.down("sm")]: {
       fontSize: theme.typography.h5.fontSize,
     },
@@ -154,9 +154,6 @@ const Eazl = () => {
       <HeroBanner>
         <Container maxWidth="lg">
           <Typography variant="h1" gutterBottom>
-            Cofounded a Prompt Management App: Eazl.ai
-          </Typography>
-          <Typography variant="h3">
             Building Innovative Solutions with AI
           </Typography>
         </Container>
