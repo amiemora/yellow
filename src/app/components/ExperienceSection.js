@@ -18,52 +18,54 @@ const stagger = {
 
 const experiences = [
   {
-    role: 'Lead Full-Stack Engineer / AI Growth Engineer',
-    company: 'DepoGenius',
+    role: 'Fractional CTO & Principal Architect',
+    company: 'DepoGenius / LDI / LitSignal',
     location: 'Austin, TX',
     period: 'Aug 2024 — Present',
     current: true,
     highlights: [
-      'Architected "Sales Genius", a proprietary enterprise CRM automating the full sales pipeline through data intelligence and generative AI.',
-      'Engineered a GCP backend managing 48 scheduled Cloud Functions and real-time Firestore triggers with autonomous pipeline orchestration.',
-      'Migrated expensive cloud compute workloads to a Docker-based, on-premise worker environment — reducing server costs by 85%.',
-      'Built an intelligence layer using Vertex AI & Gemini APIs to auto-generate client dossiers and personalized outreach at scale.',
+      'Own end-to-end technical strategy and infrastructure budget across three enterprise products — aligning architectural decisions with revenue targets and client retention KPIs.',
+      'Architected the LitSignal Enterprise Data Federation — migrating a coupled Firestore (NoSQL) backend to a centralized PostgreSQL EDW with normalized relational schemas, CDC streaming, and outbox-pattern webhook dispatch.',
+      'Designed and deployed a zero-cloud on-premise Docker Swarm fleet, eliminating $24K+/yr in GCP compute costs while doubling throughput and reducing latency by 80%.',
+      'Engineered complex cross-database query patterns — concurrent PostgreSQL and Firestore reads with in-memory joins, delivering sub-second load times across 10M+ federated records.',
+      'Built autonomous event-driven pipelines (Cloud Functions, cron schedulers, reactive webhooks) powering 24/7 discovery, qualification, and alerting with <1ms event propagation.',
     ],
-    tags: ['React', 'GCP', 'Vertex AI', 'Docker', 'Puppeteer', 'Firestore'],
+    tags: ['PostgreSQL', 'Firestore', 'Cloud Architecture', 'Docker', 'CDC', 'GCP', 'Vertex AI'],
   },
   {
-    role: 'Co-Founder & Full-Stack Engineer',
+    role: 'Co-Founder & Technical Lead',
     company: 'Eazl.ai',
     location: 'Austin, TX',
     period: 'Sep 2023 — Jan 2024',
     highlights: [
-      'Led full-stack development of an AI prompt management platform integrating multiple LLMs (Gemini, Claude, ChatGPT).',
-      'Built an AI cost estimator tool that predicted API token usage, reducing user spending by 20%.',
-      'Developed a subscription system with secure payment processing via Stripe API.',
+      'Led architectural design and full-stack development of an AI prompt management platform integrating multiple LLMs (Gemini, Claude, ChatGPT).',
+      'Architected an AI cost estimator using token-level usage forecasting, reducing customer API spend by 20%.',
+      'Designed Firestore NoSQL data models for user session state, prompt versioning, and real-time collaboration features.',
+      'Designed subscription infrastructure with Stripe API integration, payment lifecycle management, and webhook-driven billing automation.',
     ],
-    tags: ['Next.js', 'Gemini', 'Claude', 'Stripe', 'Vercel'],
+    tags: ['Next.js', 'Firestore', 'Gemini', 'Claude', 'Stripe', 'System Design'],
   },
   {
-    role: 'Software Engineer',
+    role: 'Lead Engineer (Techstars)',
     company: 'CentralTexas.com',
     location: 'Austin, TX',
     period: 'Mar 2023 — Jan 2024',
     highlights: [
-      'Sole developer during the company\'s Techstars accelerator program — built the entire platform on React, Next.js, and GCP.',
-      'Engineered subscription processing logic and payment integrations with Stripe API.',
+      'Sole engineering hire during the company\'s Techstars accelerator cohort — owned the complete technology roadmap, infrastructure decisions, and database architecture.',
+      'Architected the full product stack on React, Next.js, and GCP — designing Firestore collections, Cloud Functions triggers, and subscription processing with Stripe.',
     ],
-    tags: ['React', 'Next.js', 'GCP', 'Stripe', 'Techstars'],
+    tags: ['React', 'Next.js', 'GCP', 'Firestore', 'Stripe', 'Techstars'],
   },
   {
-    role: 'Automation Specialist',
+    role: 'Automation Architect',
     company: 'SA Legal Solutions',
     location: 'Austin, TX',
     period: 'Jul 2023 — Aug 2023',
     highlights: [
-      'Automated Accounts Receivable processes — achieved a 50% reduction in collection time.',
-      'Built an automated pipeline to extract and sync invoice data from the QuickBooks API nightly.',
+      'Architected automated Accounts Receivable pipelines — achieving a 50% reduction in collection time through event-driven invoice processing.',
+      'Built an autonomous data sync pipeline extracting and reconciling invoice data from the QuickBooks API on a nightly cron schedule.',
     ],
-    tags: ['Node.js', 'QuickBooks API', 'Gmail API'],
+    tags: ['Node.js', 'QuickBooks API', 'Gmail API', 'Process Automation'],
   },
 ];
 
@@ -92,11 +94,11 @@ export default function ExperienceSection() {
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeUp}
         >
-          <div className="section-label">Career</div>
+          <div className="section-label">Engineering Leadership</div>
           <h2 className="section-title">Professional Experience</h2>
           <p className="section-subtitle">
-            From startup accelerators to enterprise AI systems —
-            building at every scale.
+            From startup accelerators to enterprise-scale infrastructure —
+            architecting and leading at every level.
           </p>
         </motion.div>
 

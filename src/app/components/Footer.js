@@ -25,8 +25,9 @@ export default function Footer() {
           <div className="footer-brand">
             <div className="footer-logo">AM.</div>
             <p className="footer-tagline">
-              Available for freelance and contract opportunities. Let&apos;s build
-              something extraordinary together.
+              Available for enterprise consulting, fractional CTO engagements,
+              and cloud architecture contracts. Let&apos;s architect something
+              extraordinary.
             </p>
           </div>
 
@@ -75,7 +76,7 @@ export default function Footer() {
           </div>
           <div className="footer-status">
             <span className="footer-status-dot" />
-            Currently accepting new projects
+            Accepting enterprise engagements
           </div>
         </div>
       </div>

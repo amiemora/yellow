@@ -6,19 +6,19 @@ const technologies = [
   { name: 'React', icon: '⚛️' },
   { name: 'Next.js', icon: '◆' },
   { name: 'Node.js', icon: '🟢' },
+  { name: 'PostgreSQL', icon: '🐘' },
   { name: 'Google Cloud Platform', icon: '☁️' },
+  { name: 'Google Cloud Run', icon: '🚀' },
   { name: 'Firebase / Firestore', icon: '🔥' },
   { name: 'Docker', icon: '🐳' },
   { name: 'Puppeteer', icon: '🕷️' },
   { name: 'Vertex AI', icon: '🧠' },
   { name: 'Gemini API', icon: '✦' },
   { name: 'Claude AI', icon: '🤖' },
-  { name: 'OpenAI', icon: '💡' },
-  { name: 'Gmail API', icon: '📧' },
-  { name: 'Stripe API', icon: '💳' },
+  { name: 'Python / FastAPI', icon: '🐍' },
+  { name: 'CDC Streams', icon: '⚡' },
   { name: 'REST / GraphQL', icon: '🔗' },
   { name: 'Vercel', icon: '▲' },
-  { name: 'Google Maps API', icon: '📍' },
 ];
 
 const fadeUp = {
@@ -44,13 +44,13 @@ export default function TechMarquee() {
           style={{ textAlign: 'center' }}
         >
           <div className="section-label" style={{ justifyContent: 'center' }}>
-            Tech Stack
+            Infrastructure Stack
           </div>
           <h2
             className="section-title"
             style={{ textAlign: 'center' }}
           >
-            Tools of the Trade
+            Tools & Technologies
           </h2>
         </motion.div>
       </div>

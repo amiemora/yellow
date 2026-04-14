@@ -23,7 +23,7 @@ Would you have 15 minutes this week to explore how a similar system could give y
 
 Best regards,
 Amie Morales
-Senior AI Automation Architect`,
+Fractional CTO & Lead Cloud Architect`,
 });
 
 export default function DemoAI() {

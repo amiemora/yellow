@@ -31,13 +31,13 @@ export default function ServicesSection() {
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeUp}
         >
-          <div className="section-label">What I Build</div>
+          <div className="section-label">Engineering Capabilities</div>
           <h2 className="section-title">
-            Interactive Service Demos
+            Systems I Architect & Deploy
           </h2>
           <p className="section-subtitle">
             Don&apos;t just read about capabilities — experience them. Click through
-            live simulations of the systems I architect.
+            live simulations of the enterprise systems I deliver for clients.
           </p>
         </motion.div>
 
