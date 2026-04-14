@@ -26,11 +26,12 @@ const experiences = [
     highlights: [
       'Own end-to-end technical strategy and infrastructure budget across three enterprise products — aligning architectural decisions with revenue targets and client retention KPIs.',
       'Architected the LitSignal Enterprise Data Federation — migrating a coupled Firestore (NoSQL) backend to a centralized PostgreSQL EDW with normalized relational schemas, CDC streaming, and outbox-pattern webhook dispatch.',
-      'Designed and deployed a zero-cloud on-premise Docker Swarm fleet, eliminating $24K+/yr in GCP compute costs while doubling throughput and reducing latency by 80%.',
+      'Provisioned and configured on-premise server hardware (CPU/RAM allocation, Docker daemon tuning, OS hardening) and established secure remote access via SSH tunneling — enabling full fleet administration from any location.',
+      'Executed a comprehensive cloud-to-hardware TCO analysis and migrated workloads from GCE VMs to an on-premise Docker Swarm fleet, eliminating $24K+/yr in cloud costs while doubling throughput with 64GB RAM and 16-core bare-metal performance.',
+      'Engineered a residential IP proxy rotation fleet with ISP-level routing, fingerprint randomization, and automated pool health monitoring to maintain 24/7 uptime behind enterprise WAFs (Cloudflare, TylerTech).',
       'Engineered complex cross-database query patterns — concurrent PostgreSQL and Firestore reads with in-memory joins, delivering sub-second load times across 10M+ federated records.',
-      'Built autonomous event-driven pipelines (Cloud Functions, cron schedulers, reactive webhooks) powering 24/7 discovery, qualification, and alerting with <1ms event propagation.',
     ],
-    tags: ['PostgreSQL', 'Firestore', 'Cloud Architecture', 'Docker', 'CDC', 'GCP', 'Vertex AI'],
+    tags: ['PostgreSQL', 'Firestore', 'Docker', 'Hardware Provisioning', 'Residential Proxies', 'SSH/VPN', 'GCP', 'Vertex AI'],
   },
   {
     role: 'Co-Founder & Technical Lead',

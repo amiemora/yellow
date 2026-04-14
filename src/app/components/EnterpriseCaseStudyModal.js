@@ -45,15 +45,15 @@ const engineeringPillars = [
     accentColor: 'var(--accent-cyan)',
     accentGlow: 'rgba(6, 182, 212, 0.12)',
     accentBorder: 'rgba(6, 182, 212, 0.2)',
-    label: 'Cost Optimization',
-    title: 'Zero-Cloud Local Migration',
+    label: 'Hardware & Cost Optimization',
+    title: 'Bare-Metal Infrastructure Migration',
     description:
-      'Completely decoupled the heavy AI data-extraction engine from Google Cloud and engineered a custom Docker worker queue that runs natively on the client\'s on-premise hardware. This instantly slashed their recurring SaaS overhead by 100% while maintaining high-fidelity AI document parsing.',
+      'Conducted a comprehensive cloud-to-hardware TCO analysis comparing GCE VM pricing against on-premise bare-metal performance. Provisioned and configured dedicated server hardware — allocating 64GB RAM, 16 CPU cores, and tuning Docker daemon settings for maximum container density. Established secure remote access via SSH tunneling for full fleet administration. Deployed a residential IP proxy rotation fleet with ISP-level routing to bypass enterprise WAFs. Result: 100% cloud cost elimination with superior throughput.',
     metrics: [
       { value: '100%', label: 'Cloud Cost Reduction' },
-      { value: '0', label: 'Monthly SaaS Fees' },
+      { value: '64GB', label: 'RAM Allocated' },
     ],
-    techTags: ['Docker', 'On-Premise', 'Worker Queue', 'Gemini AI'],
+    techTags: ['Hardware Provisioning', 'Residential Proxies', 'SSH/VPN', 'Docker Swarm'],
   },
   {
     icon: '⚡',

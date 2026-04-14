@@ -10,10 +10,10 @@ export default function DemoCost() {
     <div className="demo-card">
       <div className="demo-card-header">
         <div className="demo-card-icon green">💰</div>
-        <h3 className="demo-card-title">Cloud Cost Optimization</h3>
+        <h3 className="demo-card-title">Cloud vs Hardware Cost Analysis</h3>
         <p className="demo-card-desc">
-          Strategic migration from cloud VMs to on-premise Docker Swarm for
-          massive cost savings.
+          Hardware-provisioned on-premise Docker Swarm vs cloud VMs — real TCO
+          analysis with CPU, RAM, and latency benchmarks.
         </p>
       </div>
 

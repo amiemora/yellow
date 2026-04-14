@@ -30,7 +30,7 @@ const caseStudies = [
     challenge:
       'A legacy, manual data discovery process bottlenecked by enterprise WAFs (Cloudflare/TylerTech) and strict 50k pagination limits.',
     architecture:
-      'Designed a resilient, on-premise Docker Swarm proxy fleet executing 24/7 autonomous daily discovery sweeps with an intelligent Pre-Scrape Verification Layer and native Angular facet-filters to bypass pagination throttling.',
+      'Provisioned bare-metal server hardware and deployed a residential IP proxy fleet on an on-premise Docker Swarm — executing 24/7 autonomous discovery sweeps with an intelligent Pre-Scrape Verification Layer and native Angular facet-filters to bypass pagination throttling.',
     product:
       'Engineered a bespoke React/Firebase dashboard with dynamic pagination, real-time sync, and a custom Trial Readiness Score (TRS) auto-tracking engine.',
     roi: 'Eliminated SaaS scraping costs and replaced 40+ hours/week of manual research with an autonomous enterprise pipeline.',
@@ -40,7 +40,7 @@ const caseStudies = [
       { label: 'Manual Hours Replaced', value: '40+/wk' },
     ],
     hasDeepdive: 'ldi',
-    pillars: ['Docker Swarm Fleet', 'WAF Bypass Engine', 'TRS Auto-Tracker'],
+    pillars: ['Residential Proxy Fleet', 'Hardware Provisioning', 'TRS Auto-Tracker'],
   },
   {
     id: 'litsignal',
@@ -103,8 +103,8 @@ const infraCards = [
   {
     icon: '🐳',
     metric: '85%',
-    title: 'Docker-Based Cloud Cost Optimization',
-    desc: 'Execution of zero-downtime migrations from expensive GCP instances to on-premise, daemon-based Docker environments, yielding 85%+ reductions in OPEX.',
+    title: 'Hardware Provisioning & Cloud Migration',
+    desc: 'Full-stack infrastructure ownership — from bare-metal hardware provisioning (CPU/RAM allocation, OS hardening) and SSH remote access setup, to cloud-to-hardware TCO analysis and zero-downtime Docker Swarm migrations.',
   },
   {
     icon: '🔗',
@@ -115,8 +115,8 @@ const infraCards = [
   {
     icon: '🛡️',
     metric: '24/7',
-    title: 'WAF-Resilient Extraction Pipelines',
-    desc: 'Autonomous headless browser clusters with fingerprint rotation, proxy orchestration, and intelligent retry logic — operating continuously behind enterprise WAFs.',
+    title: 'Residential Proxy & WAF Bypass Engineering',
+    desc: 'Residential IP proxy rotation fleets with ISP-level routing, browser fingerprint randomization, and automated pool health monitoring — operating continuously behind enterprise WAFs (Cloudflare, TylerTech).',
   },
 ];
 
