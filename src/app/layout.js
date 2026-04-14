@@ -1,91 +1,40 @@
-"use client";
-// The 'use client' directive tells Next.js that this component should be treated as a Client Component and
-// rendered on the client-side, allowing it to use React hooks and handle client-side interactions.
+import './globals.css';
 
-import * as React from "react";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { Box, CssBaseline, ThemeProvider, useTheme } from "@mui/material";
-import { getTheme } from "./theme";
-import { BreakpointProvider, useBreakpoint } from "./context/BreakpointContext";
-import Sidebar from "./components/Sidebar";
-import TopBar from "./components/TopBar";
-
-import BottomNavigation from "./components/BottomNav";
+export const metadata = {
+  title: 'Amie Morales — Fractional CTO & Lead Cloud Architect | AI Automation & Data Pipelines | Austin, TX',
+  description:
+    'Fractional CTO and Senior Full-Stack Architect specializing in event-driven architectures, enterprise data federation, and AI-powered cost optimization. I architect autonomous cloud systems on React, GCP, Docker, and Gemini AI that eliminate operational overhead and deliver measurable ROI.',
+  keywords: [
+    'Fractional CTO',
+    'Lead Cloud Architect',
+    'AI Automation',
+    'Data Pipelines',
+    'Event-Driven Architecture',
+    'Data Federation',
+    'Cost Optimization',
+    'GCP',
+    'React',
+    'Next.js',
+    'Docker',
+    'Vertex AI',
+    'Gemini API',
+    'Full Stack Engineer',
+    'Cloud Architecture',
+    'Enterprise Consulting',
+    'Austin TX',
+  ],
+  openGraph: {
+    title: 'Amie Morales — Fractional CTO & Lead Cloud Architect',
+    description:
+      'I architect autonomous, event-driven cloud systems that eliminate operational overhead, federate enterprise data, and deliver measurable ROI. Specializing in React, GCP, Docker, and Generative AI.',
+    type: 'website',
+  },
+};
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-
-  const [scrollPositions, setScrollPositions] = useState({});
-  const theme = useTheme();
-  const { isDesktop, isTablet } = useBreakpoint();
-
-  useEffect(() => {
-    console.log("useEffect triggered for pathname:", pathname);
-
-    const saveScrollPosition = () => {
-      console.log("Saving scroll position:", window.scrollY, "for", pathname);
-      setScrollPositions((prevPositions) => ({
-        ...prevPositions,
-        [pathname]: window.scrollY,
-      }));
-    };
-
-    const restoreScrollPosition = () => {
-      console.log(
-        "Restoring scroll position for",
-        pathname,
-        "to",
-        scrollPositions[pathname] || 0
-      );
-      setTimeout(() => {
-        window.scrollTo(0, scrollPositions[pathname] || 0);
-      }, 0);
-    };
-
-    window.addEventListener("scroll", saveScrollPosition);
-    window.addEventListener("popstate", restoreScrollPosition);
-
-    restoreScrollPosition(); // Restore on initial load
-
-    return () => {
-      window.removeEventListener("scroll", saveScrollPosition);
-      window.removeEventListener("popstate", restoreScrollPosition);
-    };
-  }, [pathname, scrollPositions]);
-
   return (
     <html lang="en">
-      <body>
-        <ThemeProvider theme={getTheme()}>
-          <BreakpointProvider>
-            <CssBaseline />
-            <Box sx={{ display: "flex", height: "100vh" }}>
-              {/* Sidebar to the left */}
-              {/* Conditionally render Sidebar based on screen size */}
-              {/* <Sidebar /> */}
-
-              <Box sx={{ flexGrow: 1, overflow: "auto" }}>
-                {/* TopBar stays on top */}
-                <TopBar />
-
-                <Box
-                  sx={{
-                    pt: { xs: 8, md: 10 }, // Add padding to account for TopBar height
-                    flexGrow: 1,
-                    overflow: "auto",
-                  }}
-                >
-                  {children}
-                </Box>
-
-                {/* BottomNavigation stays at the bottom */}
-                {/* <BottomNavigation /> */}
-              </Box>
-            </Box>
-          </BreakpointProvider>
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
